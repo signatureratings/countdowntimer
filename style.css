@@ -42,3 +42,6 @@
   margin: 5px;
   min-width: 35px;
 }
+.close {
+  display: none;
+}

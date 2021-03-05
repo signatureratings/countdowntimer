@@ -14,6 +14,8 @@ var minutes = document.getElementById('minutes')
 var seconds = document.getElementById('seconds')
 var error = document.getElementById('error')
 var change = document.getElementById('change')
+var time = document.querySelector('.time')
+var timenames = document.querySelector('.timenames')
 var timeout
 myform.addEventListener('submit', function (e) {
   e.preventDefault()
@@ -28,7 +30,12 @@ myform.addEventListener('reset', function (e) {
   e.preventDefault()
   cdate.value = null
   clearTimeout(timeout)
-  display.innerText = ''
+  time.classList.add('close')
+  timenames.classList.add('close')
+  days.innerText = ''
+  hours.innerText = ''
+  minutes.innerText = ''
+  seconds.innerText = ''
   error.innerText = ''
   sessionStorage.removeItem('userdate')
 })
@@ -42,6 +49,8 @@ function calc() {
     timediff.push(Math.floor((diff / (1000 * 60 * 60)) % 24))
     timediff.push(Math.floor((diff / 1000 / 60) % 60))
     timediff.push(Math.floor((diff / 1000) % 60))
+    time.classList.remove('close')
+    timenames.classList.remove('close')
     days.innerText = timediff[0]
     hours.innerText = timediff[1]
     minutes.innerText = timediff[2]
