@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Timer</title>
+  </head>
+  <body>
+    <div class="timer">
+      <div class="timer_display">
+        <form id="myform" name="myform">
+          <input
+            type="datetime-local"
+            id="cdate"
+            name="cdate"
+            min="2021-03-01"
+            required
+          />
+          <br />
+          <br />
+          <button type="submit" id="button">Set the Countdown</button>
+          <button type="reset" id="change">Reset the Countdown</button>
+        </form>
+        <div class="time">
+          <h1 id="days"></h1>
+          <h1 id="hours"></h1>
+          <h1 id="minutes"></h1>
+          <h1 id="seconds"></h1>
+        </div>
+        <div class="timenames">
+          <span>Days</span>
+          <span>Hours</span>
+          <span>Minutes</span>
+          <span>Seconds</span>
+        </div>
+      </div>
+      <p id="error"></p>
+    </div>
+  </body>
+  <script src="script.js" type="text/javascript"></script>
+</html>
